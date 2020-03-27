@@ -24,9 +24,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-/**
- * Created by andrew on 11/18/15.
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {ApplicationToTest.class})
 public class TestRunner extends JUnitStories {
