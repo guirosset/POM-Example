@@ -1,5 +1,6 @@
 package br.com.example.pom.pages;
 
+import br.com.example.pom.methods.SeleniumMethods;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,12 +14,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class ItemPage {
+public class ItemPage extends SeleniumMethods {
 
-    private final static String elements = "//div[6]/div[2]/ul/li";
-
-    @FindAll(@FindBy(how = How.XPATH, using = elements))
-    private List<WebElement> items;
+    @FindBy(how = How.XPATH, using = "//div[@data-index='2']//h2")
+    private WebElement item;
 
     private WebDriver driver;
 
@@ -31,11 +30,14 @@ public class ItemPage {
      *
      */
     public void selecionaPrimeiroProduto() {
-        WebDriverWait wait = new WebDriverWait( driver, 10 );
-        wait.until( ExpectedConditions.visibilityOfElementLocated( By.xpath( elements ) ) );
+        //WebDriverWait wait = new WebDriverWait( driver, 10 );
+        WebDriverWait wait = new WebDriverWait(driver, 10  );
+        wait.until( ExpectedConditions.visibilityOf( item ) );
 
-        WebElement firstItem = items.get( 0 );
 
-        firstItem.click();
+        //waituntil( item );
+
+        Assert.assertTrue( "O elemento está presente", item.isDisplayed() );
+        item.click();
     }
 }

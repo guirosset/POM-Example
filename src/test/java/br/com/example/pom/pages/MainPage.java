@@ -8,13 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
 
-    @FindBy(how = How.XPATH, using = "//div[2]/div[2]/div[1]/input[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"twotabsearchtextbox\"]")
     private WebElement campoBusca;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"btnHeaderSearch\"]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"nav-search\"]/form/div[2]/div/input")
     private WebElement confirmaProduto;
 
-    private static final String produto = "celular";
+    private static final String produto = "smartphone";
 
     public MainPage(WebDriver driver) {
         PageFactory.initElements( driver, this);

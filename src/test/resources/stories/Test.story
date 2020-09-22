@@ -8,4 +8,4 @@ So that I can achieve a business goal
 Scenario: 1 compra de produto
 Given O Script acessa a URL
 When O usuario seleciona um produto
-Then O usuario finaliza compra
+

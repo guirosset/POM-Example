@@ -1,6 +1,5 @@
 package br.com.example.pom.steps;
 
-import br.com.example.pom.pages.CartPage;
 import br.com.example.pom.pages.ItemPage;
 import br.com.example.pom.pages.MainPage;
 import org.jbehave.core.annotations.*;
@@ -33,12 +32,6 @@ public class TestSteps {
         itemPage.selecionaPrimeiroProduto();
     }
 
-
-    @Then("O usuario finaliza compra")
-    public void finalizaCompra() {
-        CartPage cartPage = new CartPage(driver);
-        cartPage.clicaCarrinho();
-    }
 
     @AfterScenario
     public void fechaDrive(){
